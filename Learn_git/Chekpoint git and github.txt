@@ -1,0 +1,170 @@
+
+AMS1@DESKTOP-CUJC214 MINGW64 /c/Learn_git (main)
+$ git add tiers.txt
+
+AMS1@DESKTOP-CUJC214 MINGW64 /c/Learn_git (main)
+$ git init
+Reinitialized existing Git repository in C:/Learn_git/.git/
+
+AMS1@DESKTOP-CUJC214 MINGW64 /c/Learn_git (main)
+$ git add third.txt
+fatal: pathspec 'third.txt' did not match any files
+
+AMS1@DESKTOP-CUJC214 MINGW64 /c/Learn_git (main)
+$ git commit -m "ajout de tiers.txt"
+
+[main (root-commit) 3458338] ajout de tiers.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 tiers.txt
+
+AMS1@DESKTOP-CUJC214 MINGW64 /c/Learn_git (main)
+$ git log
+commit 3458338e449821e4c73c65e7800060ae82b048a4 (HEAD -> main)
+Author: thedeviscomming <164375150+thedeviscomming@users.noreply.github.com>
+Date:   Tue Apr 23 21:42:28 2024 +0000
+
+    ajout de tiers.txt
+
+AMS1@DESKTOP-CUJC214 MINGW64 /c/Learn_git (main)
+$ touch Fourth.txt
+
+
+AMS1@DESKTOP-CUJC214 MINGW64 /c/Learn_git (main)
+$ git add Fourth.txt
+
+
+AMS1@DESKTOP-CUJC214 MINGW64 /c/Learn_git (main)
+$ ^[[200~
+bash: $'\E[200~': command not found
+
+AMS1@DESKTOP-CUJC214 MINGW64 /c/Learn_git (main)
+$
+git commit -m "ajout de quatrième.txt"
+
+[main 5360079] ajout de quatrième.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Fourth.txt
+
+AMS1@DESKTOP-CUJC214 MINGW64 /c/Learn_git (main)
+$ rm Third.txt
+
+rm: cannot remove 'Third.txt': No such file or directory
+
+AMS1@DESKTOP-CUJC214 MINGW64 /c/Learn_git (main)
+$ git add .
+
+
+AMS1@DESKTOP-CUJC214 MINGW64 /c/Learn_git (main)
+$ git commit -m "supprimer Third.txt"
+
+[main 519bfb3] supprimer Third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 learn_gittiers.txt
+
+AMS1@DESKTOP-CUJC214 MINGW64 /c/Learn_git (main)
+$ git log
+
+commit 519bfb3a53ea7004ac4ec2d30e5e8736f4f1e112 (HEAD -> main)
+Author: thedeviscomming <164375150+thedeviscomming@users.noreply.github.com>
+Date:   Tue Apr 23 23:25:54 2024 +0000
+
+    supprimer Third.txt
+
+commit 536007976f5ea8fc3c992b3089a30594fff959ed
+Author: thedeviscomming <164375150+thedeviscomming@users.noreply.github.com>
+Date:   Tue Apr 23 23:19:42 2024 +0000
+
+    ajout de quatrième.txt
+
+commit 3458338e449821e4c73c65e7800060ae82b048a4
+Author: thedeviscomming <164375150+thedeviscomming@users.noreply.github.com>
+Date:   Tue Apr 23 21:42:28 2024 +0000
+
+    ajout de tiers.txt
+
+AMS1@DESKTOP-CUJC214 MINGW64 /c/Learn_git (main)
+$ git config --global core.pager cat
+ git config --global --list
+
+filter.lfs.required=true
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+user.name=thedeviscomming
+user.email=164375150+thedeviscomming@users.noreply.github.com
+init.defaultbranch=main
+core.pager=cat
+
+AMS1@DESKTOP-CUJC214 MINGW64 /c/Learn_git (main)
+$ ^[[200~git config --global --help
+bash: $'\E[200~git': command not found
+
+AMS1@DESKTOP-CUJC214 MINGW64 /c/Learn_git (main)
+$ git config --global --help
+
+usage: git config [<options>]
+
+Config file location
+    --[no-]global         use global config file
+    --[no-]system         use system config file
+    --[no-]local          use repository config file
+    --[no-]worktree       use per-worktree config file
+    -f, --[no-]file <file>
+                          use given config file
+    --[no-]blob <blob-id> read config from given blob object
+
+Action
+    --[no-]get            get value: name [value-pattern]
+    --[no-]get-all        get all values: key [value-pattern]
+    --[no-]get-regexp     get values for regexp: name-regex [value-pattern]
+    --[no-]get-urlmatch   get value specific for the URL: section[.var] URL
+    --[no-]replace-all    replace all matching variables: name value [value-pattern]
+    --[no-]add            add a new variable: name value
+    --[no-]unset          remove a variable: name [value-pattern]
+    --[no-]unset-all      remove all matches: name [value-pattern]
+    --[no-]rename-section rename section: old-name new-name
+    --[no-]remove-section remove a section: name
+    -l, --[no-]list       list all
+    --[no-]fixed-value    use string equality when comparing values to 'value-pattern'
+    -e, --[no-]edit       open an editor
+    --[no-]get-color      find the color configured: slot [default]
+    --[no-]get-colorbool  find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --[no-]type <type>
+                          value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --[no-]null       terminate values with NUL byte
+    --[no-]name-only      show variable names only
+    --[no-]includes       respect include directives on lookup
+    --[no-]show-origin    show origin of config (file, standard input, blob, command line)
+    --[no-]show-scope     show scope of config (worktree, local, global, system, command)
+    --[no-]default <value>
+                          with --get, use default value when missing entry
+
+
+AMS1@DESKTOP-CUJC214 MINGW64 /c/Learn_git (main)
+$ ^C
+
+AMS1@DESKTOP-CUJC214 MINGW64 /c/Learn_git (main)
+$ --[no-]show-scope
+bash: --[no-]show-scope: command not found
+
+AMS1@DESKTOP-CUJC214 MINGW64 /c/Learn_git (main)
+$ ^C
+
+AMS1@DESKTOP-CUJC214 MINGW64 /c/Learn_git (main)
+$ ^C
+
+AMS1@DESKTOP-CUJC214 MINGW64 /c/Learn_git (main)
+$ ^C
+
+AMS1@DESKTOP-CUJC214 MINGW64 /c/Learn_git (main)
+$
